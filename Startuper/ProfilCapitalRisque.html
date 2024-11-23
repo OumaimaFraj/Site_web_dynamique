@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Profil de Startuper </title>
+        <link rel="stylesheet" type="text/css" href="styleProfil.css">
+    </head>
+    <body>
+        <!-------------------------------------------NAVIAGATION-------------------------------------------------->
+        <div class="container">
+            <div class="navigation">
+                <ul>
+                    <!--LOGO-->
+                    <li>
+                        <a href="#" ><img src="logo2.png" class="logo"></a>
+                    </li>
+                    <!--DASHBOARD-->
+                    <li>
+                        <a href="ProfilCapitalRisque.html">
+                            <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                            <span class="title">Dashboard</span>
+                        </a>
+                    </li>
+                    <!--Les projets a financer-->
+                    <li>
+                        <a href="Projet_a_financer.php">
+                            <span class="icon"><ion-icon name="create-outline"></ion-icon></span>
+                            <span class="title">Les projets a financer </span>
+                        </a>
+                    </li>
+                    <!--EDIT PROJECT-->
+                    <li>
+                        <a href="Afficher_proj.php">
+                            <span class="icon"><ion-icon name="create-outline"></ion-icon></span>
+                            <span class="title">Afficher projet </span>
+                        </a>
+                    </li>
+                    <!--LISTER PROJECTS-->
+                    <li>
+                        <a href="Lister_proj_cr.php">
+                            <span class="icon"><ion-icon name="file-tray-stacked-outline"></ion-icon></span>
+                            <span class="title">Lister mes projet</span>
+                        </a>
+                    </li>
+                    <!--EDIT PROFILE-->
+                    <li>
+                        <a href="#">
+                            <span class="icon"><ion-icon name="create-outline"></ion-icon></span>
+                            <span class="title">Edit Profile</span>
+                        </a>
+                    </li>
+                    <!--SETTINGS-->
+                    <li>
+                        <a href="#">
+                            <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                            <span class="title">Settings</span>
+                        </a>
+                    </li>
+                    <!--SIGN OUT-->
+                    <li>
+                        <a href="logout.php">
+                            <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                            <span class="title">Sign Out</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--FOR ICONS-->
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <!--CODE JS-->
+        <script>
+            let list=document.querySelectorAll('.navigation li');
+            function activeLink(){
+                list.forEach((item)=>
+                item.classList.remove('hovered'));
+                this.classList.add('hovered');
+            }
+            list.forEach((item)=>
+            item.addEventListebet('mouseover',activeLink))
+            // Menu Toggle
+            let toggle = document.querySelector(".toggle");
+            let navigation = document.querySelector(".navigation");
+            let main = document.querySelector(".main");
+            toggle.onclick = function () {
+            navigation.classList.toggle("active");
+            main.classList.toggle("active");
+            };
+        </script>
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+
+            </div>
+
+            <!-- ======================= Cards ================== -->
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers">50</div>
+                        <div class="cardName">Page views</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">2</div>
+                        <div class="cardName">Nombre de projets</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="documents-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">140</div>
+                        <div class="cardName">Nombre d'actions</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="id-card-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">1500$</div>
+                        <div class="cardName">Argent</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="folder-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============List des projets ================= -->
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>List Des Projets</h2>
+                        <a href="Projet_a_financer.php" class="btn">View All</a>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Nom du projet</td>
+                                <td>Nombre d'actions</td>
+                                <td>Afficher</td>
+                                <td>Pas interesse</td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Projet 1</td>
+                                <td>180</td>
+                        
+                                <td><span class="edit">Afficher</span></td>
+                                <td><span class="delete">Pas interesse</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Projet 2</td>
+                                <td>120</td>
+                                
+                                <td><span class="edit">Afficher</span></td>
+                                <td><span class="delete">Pas interesse</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Projet 3</td>
+                                <td>280</td>
+                                
+                                <td><span class="edit">Afficher</span></td>
+                                <td><span class="delete">Pas interesse</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Projet 4</td>
+                                <td>170</td>
+                                
+                                <td><span class="edit">Afficher</span></td>
+                                <td><span class="delete">Pas interesse</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>*****</td>
+                                <td>*****</td>
+                                
+                                <td><span class="edit">Afficher</span></td>
+                                <td><span class="delete">Pas interesse</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>*****</td>
+                                <td>*****</td>
+                                
+                                <td><span class="edit">Afficher</span></td>
+                                <td><span class="delete">Pas interesse</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>*****</td>
+                                <td>*****</td>
+                                
+                                <td><span class="edit">Afficher</span></td>
+                                <td><span class="delete">Pas interesse</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>*****</td>
+                                <td>*****</td>
+                                
+                                <td><span class="edit">Afficher</span></td>
+                                <td><span class="delete">Pas interesse</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                
+
+    <!-- =========== Scripts =========  -->
+    <script src="dashuser.js"></script>
+
+    </body>
+</html>
